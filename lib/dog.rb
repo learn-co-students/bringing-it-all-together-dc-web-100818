@@ -83,6 +83,9 @@ class Dog
     new_from_db(row)
   end
 
+  # creates an instance of a dog if it does not already exist
+  # when two dogs have the same name and different breed, it returns the correct dog
+  # when creating a new dog with the same name as persisted dogs, it returns the correct dog
   def self.find_or_create_by(attributes)
     name = attributes[:name]
     breed = attributes[:breed]
